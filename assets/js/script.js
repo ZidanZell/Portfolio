@@ -42,7 +42,7 @@ document
   icon.classList.toggle("fa-arrow-right", !isHidden)
   icon.classList.toggle("fa-arrow-up", isHidden)
 });
-    $("menu").click(function(){
+    $('#menu').click(function(){
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
     });
