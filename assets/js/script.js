@@ -233,6 +233,24 @@ document
     ".box-container:not(.hidden)"
   )
 
+let hideTimeout;
+
+  // Show pop-up when hovering over "Certification" link or the pop-up itself
+  function showPopup() {
+      clearTimeout(hideTimeout); // Cancel any pending hide action
+      document.getElementById("certificationPopup").style.display = "block";
+  }
+
+  // Start timeout to hide pop-up
+  function startHidePopupTimeout() {
+      hideTimeout = setTimeout(hidePopup, 300); // Delay to allow smooth exit
+  }
+
+  // Hide pop-up function
+  function hidePopup() {
+      document.getElementById("certificationPopup").style.display = "none";
+  }
+
   // Check if there are any hidden containers to show
   const isHidden = hiddenContainers.length > 0
 
