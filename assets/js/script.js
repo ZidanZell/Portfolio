@@ -219,7 +219,21 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+let hideTimeout;
 
+// Show pop-up when hovering over "Certification" link or the pop-up itself
+function showPopup() {
+    clearTimeout(hideTimeout); // Cancel any pending hide action
+    document.getElementById("certificationPopup").style.display = "block";
+}
+// Start timeout to hide pop-up
+function startHidePopupTimeout() {
+    hideTimeout = setTimeout(hidePopup, 300); // Delay to allow smooth exit
+}
+// Hide pop-up function
+function hidePopup() {
+    document.getElementById("certificationPopup").style.display = "none";
+}
 srtop.reveal('.viewbtn .btn', { delay: 200 });
 // Fungsi untuk toggle view pada box-container
 document
@@ -232,25 +246,6 @@ document
   const visibleContainers = document.querySelectorAll(
     ".box-container:not(.hidden)"
   )
-
-let hideTimeout;
-
-  // Show pop-up when hovering over "Certification" link or the pop-up itself
-  function showPopup() {
-      clearTimeout(hideTimeout); // Cancel any pending hide action
-      document.getElementById("certificationPopup").style.display = "block";
-  }
-
-  // Start timeout to hide pop-up
-  function startHidePopupTimeout() {
-      hideTimeout = setTimeout(hidePopup, 300); // Delay to allow smooth exit
-  }
-
-  // Hide pop-up function
-  function hidePopup() {
-      document.getElementById("certificationPopup").style.display = "none";
-  }
-
   // Check if there are any hidden containers to show
   const isHidden = hiddenContainers.length > 0
 
