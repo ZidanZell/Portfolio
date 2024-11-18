@@ -1,48 +1,6 @@
 $(document).ready(function () {
-    srtop.reveal('.viewbtn .btn', { delay: 200 });
 });
-// Fungsi untuk toggle view pada box-container
-document
-.getElementById("toggle-view-btn")
-.addEventListener("click", function () {
-  // Select all hidden `.box-container` elements
-  const hiddenContainers = document.querySelectorAll(
-    ".box-container.hidden"
-  )
-  const visibleContainers = document.querySelectorAll(
-    ".box-container:not(.hidden)"
-  )
-
-  // Check if there are any hidden containers to show
-  const isHidden = hiddenContainers.length > 0
-
-  if (isHidden) {
-    // Show all hidden containers
-    hiddenContainers.forEach((container) => {
-      container.classList.remove("hidden")
-      container.classList.add("visible")
-    })
-    console.log("Opened hidden boxes.")
-  } else {
-    // Hide all visible containers except the first two rows
-    visibleContainers.forEach((container, index) => {
-      if (index >= 3) {
-        container.classList.add("hidden")
-        container.classList.remove("visible")
-      }
-    })
-    console.log("Closed extra boxes.")
-  }
-
-  // Update button text and icon
-  const span = this.querySelector("span")
-  const icon = this.querySelector("i")
-
-  span.textContent = isHidden ? "View Less" : "View More"
-  icon.classList.toggle("fa-arrow-right", !isHidden)
-  icon.classList.toggle("fa-arrow-up", isHidden)
-});
-    $('#menu').click(function(){
+    $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
     });
@@ -57,8 +15,8 @@ document
             document.querySelector('#scroll-top').classList.remove('active');
         }
 
-        // scroll spy
-        $('section').each(function () {
+         // scroll spy
+         $('section').each(function () {
             let height = $(this).height();
             let offset = $(this).offset().top - 200;
             let top = $(window).scrollTop();
@@ -261,3 +219,46 @@ srtop.reveal('.experience .timeline .container', { interval: 400 });
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
 srtop.reveal('.contact .container .form-group', { delay: 400 });
+
+srtop.reveal('.viewbtn .btn', { delay: 200 });
+// Fungsi untuk toggle view pada box-container
+document
+.getElementById("toggle-view-btn")
+.addEventListener("click", function () {
+  // Select all hidden `.box-container` elements
+  const hiddenContainers = document.querySelectorAll(
+    ".box-container.hidden"
+  )
+  const visibleContainers = document.querySelectorAll(
+    ".box-container:not(.hidden)"
+  )
+
+  // Check if there are any hidden containers to show
+  const isHidden = hiddenContainers.length > 0
+
+  if (isHidden) {
+    // Show all hidden containers
+    hiddenContainers.forEach((container) => {
+      container.classList.remove("hidden")
+      container.classList.add("visible")
+    })
+    console.log("Opened hidden boxes.")
+  } else {
+    // Hide all visible containers except the first two rows
+    visibleContainers.forEach((container, index) => {
+      if (index >= 3) {
+        container.classList.add("hidden")
+        container.classList.remove("visible")
+      }
+    })
+    console.log("Closed extra boxes.")
+  }
+
+  // Update button text and icon
+  const span = this.querySelector("span")
+  const icon = this.querySelector("i")
+
+  span.textContent = isHidden ? "View Less" : "View More"
+  icon.classList.toggle("fa-arrow-right", !isHidden)
+  icon.classList.toggle("fa-arrow-up", isHidden)
+});
